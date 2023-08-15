@@ -11,12 +11,14 @@ class PlayGame extends StatefulWidget {
 }
 
 class _PlayGameState extends State<PlayGame> {
-  var currentGameImage = 1;
+  var currentGameImage = "assets/images/01.png";
 
     void handlePlay() {
-    // print("test");
+    setState(() {   
+      currentGameImage = "assets/images/02.png";
+    });
   }
-  
+
   @override
 
   Widget build(context) {
@@ -24,7 +26,7 @@ class _PlayGameState extends State<PlayGame> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Image.asset(
-                  "assets/images/01.png",
+                  currentGameImage,
                   width: 150
                 ),
                 const SizedBox(height: 20,),
@@ -37,7 +39,7 @@ class _PlayGameState extends State<PlayGame> {
                     )
                   ),
                   child: const Text("Play")
-                ),             
+                ),
               ],
             );
   }
