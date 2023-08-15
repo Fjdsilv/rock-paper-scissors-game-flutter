@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
 
+import "package:rock_paper_scissors_app_flutter/my_container.dart";
+
 void main() {
   runApp(const MyApp());
 }
@@ -7,42 +9,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  void handlePlay() {
-
-  }
-
   @override
   Widget build(context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: "First App",
       home: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-              color: Colors.green[200],
-            ),
-            alignment: Alignment.center,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Image.asset(
-                  "assets/images/01.png",
-                  width: 150
-                ),
-                const SizedBox(height: 20,),
-                TextButton(
-                  onPressed: handlePlay, 
-                  style: TextButton.styleFrom(
-                    foregroundColor: Colors.black87,
-                    textStyle: const TextStyle(
-                      fontSize: 27
-                    )
-                  ),
-                  child: const Text("Play")
-                ),
-                 
-              ],
-            ),
-        ),
+        body: MyContainer(),
       )
     );
   } 
