@@ -1,3 +1,4 @@
+import "dart:math";
 import "package:flutter/material.dart";
 
 class PlayGame extends StatefulWidget {
@@ -14,8 +15,9 @@ class _PlayGameState extends State<PlayGame> {
   var currentGameImage = "assets/images/01.png";
 
     void handlePlay() {
+    var playValue = Random().nextInt(3) + 1;
     setState(() {   
-      currentGameImage = "assets/images/02.png";
+      currentGameImage = "assets/images/0$playValue.png";
     });
   }
 
