@@ -7,6 +7,10 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  void handlePlay() {
+
+  }
+
   @override
   Widget build(context) {
     return MaterialApp(
@@ -17,10 +21,25 @@ class MyApp extends StatelessWidget {
               color: Colors.green[200],
             ),
             alignment: Alignment.center,
-            child: const Column(
+            child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                 Text('Hello World')
+                Image.asset(
+                  "assets/images/01.png",
+                  width: 150
+                ),
+                const SizedBox(height: 20,),
+                TextButton(
+                  onPressed: handlePlay, 
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.black87,
+                    textStyle: const TextStyle(
+                      fontSize: 27
+                    )
+                  ),
+                  child: const Text("Play")
+                ),
+                 
               ],
             ),
         ),
